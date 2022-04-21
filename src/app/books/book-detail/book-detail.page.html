@@ -1,0 +1,55 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/books"></ion-back-button>
+    </ion-buttons>
+    <ion-title>{{loadedBook.btitle}}</ion-title>
+
+    <ion-buttons slot="primary">
+      <ion-button (click)="onDeleteBook()">
+        <ion-icon name="trash" slot="icon-only"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid no-padding>
+  <ion-row>
+    <ion-col no-padding>
+      <ion-img [src]="loadedBook.imageUrl"></ion-img>
+    </ion-col>
+  </ion-row>
+
+  <ion-row>
+    <ion-col>
+      <h1 text-right>{{loadedBook.btitle}}</h1>
+    </ion-col>
+  </ion-row>
+
+  <!-- <ion-row>
+    <ion-col>
+      <ion-list>
+        <ion-item *ngFor="let au of loadedBook.authors">
+          {{au}}
+        </ion-item>
+      </ion-list>
+    </ion-col>
+  </ion-row> -->
+  <ion-row>
+      <ion-col>
+        <ion-item>Hotel Id: <span style="margin-left:120px ;">{{loadedBook.bid}}</span></ion-item>
+        <ion-item>Rating: <span style="margin-left: 125px;">{{loadedBook.stars}} Stars</span></ion-item>
+        <ion-item>Room Type: <span style="margin-left: 55px;">{{loadedBook.room}} Room</span></ion-item>
+        <ion-item>Address<span style="margin-left: 80px;">{{loadedBook.address}} </span></ion-item>
+      </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col offset="4">
+      <ion-button >Book Now</ion-button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+
+</ion-content>

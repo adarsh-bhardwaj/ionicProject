@@ -1,0 +1,22 @@
+
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-avatar slot="start">
+      <ion-img src="../../../assets/logo.png"></ion-img>
+      </ion-avatar>
+    <!-- <ion-avtar slot="start" src="assets/img/avatar.png"></ion-avtar> -->
+  <ion-title >Hotel Booking</ion-title>
+  </ion-toolbar>
+  </ion-header>
+<ion-content>
+  <!-- <P> My Book Details..</P> -->
+  <ion-list>
+  <ion-item *ngFor="let book of books" [routerLink]="['./', book.bid]">
+  <ion-avatar slot="start">
+  <ion-img [src]="book.imageUrl"></ion-img>
+  </ion-avatar>
+  <ion-label> {{book.btitle}}</ion-label>
+  </ion-item>
+  </ion-list>
+  </ion-content>
+
